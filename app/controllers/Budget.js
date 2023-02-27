@@ -8,12 +8,15 @@ exports.create = async (req, res) => {
     if (!req.body.year) {
         res.status(400).send({ message: "Year cannot be empty!" });
     }    
-    if (!req.body.period || (req.body.period !== 'monthly' || req.body.period !== 'annual')) {
+    if (!req.body.period || (req.body.period !== 'monthly' && req.body.period !== 'annual')) {
         res.status(400).send({ message: "Period must be 'monthly' or 'annual'!" });
     } 
     if (!req.body.amount) {
         res.status(400).send({ message: "Amount cannot be empty!" });
     }
+
+
+    false || (false && true )
     
     const budget = new BudgetModel({
         category: req.body.category,
